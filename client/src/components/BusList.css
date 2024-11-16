@@ -1,0 +1,147 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+h1 {
+  text-align: center;
+  color: #ff6f00; /* Orange */
+  margin-bottom: 20px;
+}
+
+/* Mode Toggle Icon */
+.mode-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+/* Search Filters */
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters input,
+.filters select,
+.filters button {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+.filters button {
+  background-color: #ff6f00; /* Orange */
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filters button:hover {
+  background-color: #e65a00; /* Darker Orange */
+}
+
+/* Bus List */
+.bus-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bus-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #fff4e6; /* Light Orange */
+  border: 1px solid #ffe0cc; /* Light Orange Border */
+  border-radius: 6px;
+  transition: box-shadow 0.3s ease;
+}
+
+.bus-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.bus-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.bus-name {
+  font-weight: bold;
+  font-size: 18px;
+  color: #ff6f00; /* Orange */
+}
+
+.bus-route {
+  font-size: 14px;
+  color: #444444; /* Blackish */
+}
+
+.bus-price {
+  font-size: 16px;
+  color: #222222; /* Darker Black */
+  font-weight: bold;
+}
+
+/* Night Mode */
+body.night-mode {
+  background-color: #121212; /* Dark Background */
+  color: #e0e0e0; /* Light Text */
+}
+
+.container.night-mode {
+  background-color: #1e1e1e;
+}
+
+.filters input.night-mode,
+.filters select.night-mode,
+.filters button.night-mode {
+  background-color: #2e2e2e;
+  color: #e0e0e0;
+  border-color: #444444;
+}
+
+.filters button.night-mode:hover {
+  background-color: #ff6f00; /* Orange */
+}
+
+.bus-item.night-mode {
+  background-color: #2e2e2e;
+  border-color: #444444;
+}
+
+.bus-name.night-mode {
+  color: #ff6f00; /* Orange */
+}
+
+.mode-toggle i {
+  display: inline-block;
+  font-size: 32px; /* Adjust the size of the icon */
+  color: #ff6f00;  /* Default color */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+body.night-mode .mode-toggle i {
+  color: #e0e0e0; /* Light icon color for night mode */
+}
