@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom"; // Updated import
+import { useNavigate } from "react-router-dom";
 import "./BusList.css";
 import Navbar from "./Navbar";
 import "font-awesome/css/font-awesome.min.css";
@@ -53,8 +53,9 @@ const BusList = () => {
   };
 
   const handleSelectBus = (bus) => {
-    setSelectedBus(bus);
-    navigate("/passenger-details"); // Updated navigation
+    // setSelectedBus(bus);
+    console.log(selectedBus)
+    navigate("/passenger-details", { state: { selectedBus: bus } })
   };
 
   return (

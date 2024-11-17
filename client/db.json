@@ -1,182 +1,175 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "username": "john_doe",
-        "password": "password123"
-      },
-      {
-        "id": 2,
-        "username": "jane_doe",
-        "password": "mypassword"
-      }
-    ],
-    "buses": [
-      {
-        "id": 1,
-        "name": "Morning Star Travels",
-        "source": "Delhi",
-        "destination": "Jaipur",
-        "time": "06:00 AM",
-        "type": "Day",
-        "price": 500,
-        "no_of_seats_available": 30
-      },
-      {
-        "id": 2,
-        "name": "Raj National Express",
-        "source": "Delhi",
-        "destination": "Jaipur",
-        "time": "10:00 PM",
-        "type": "Night",
-        "price": 700,
-        "no_of_seats_available": 25
-      },
-      {
-        "id": 3,
-        "name": "Sharma Travels",
-        "source": "Mumbai",
-        "destination": "Pune",
-        "time": "07:00 AM",
-        "type": "Day",
-        "price": 300,
-        "no_of_seats_available": 40
-      },
-      {
-        "id": 4,
-        "name": "Neeta Tours",
-        "source": "Mumbai",
-        "destination": "Ahmedabad",
-        "time": "09:00 PM",
-        "type": "Night",
-        "price": 1200,
-        "no_of_seats_available": 35
-      },
-      {
-        "id": 5,
-        "name": "VRL Travels",
-        "source": "Bangalore",
-        "destination": "Hyderabad",
-        "time": "08:00 PM",
-        "type": "Night",
-        "price": 800,
-        "no_of_seats_available": 20
-      },
-      {
-        "id": 6,
-        "name": "KSRTC Airavata",
-        "source": "Bangalore",
-        "destination": "Chennai",
-        "time": "05:00 AM",
-        "type": "Day",
-        "price": 600,
-        "no_of_seats_available": 45
-      },
-      {
-        "id": 7,
-        "name": "SRS Travels",
-        "source": "Hyderabad",
-        "destination": "Visakhapatnam",
-        "time": "10:30 PM",
-        "type": "Night",
-        "price": 900,
-        "no_of_seats_available": 30
-      },
-      {
-        "id": 8,
-        "name": "Green Line Travels",
-        "source": "Chennai",
-        "destination": "Coimbatore",
-        "time": "06:00 AM",
-        "type": "Day",
-        "price": 500,
-        "no_of_seats_available": 50
-      },
-      {
-        "id": 9,
-        "name": "Orange Tours & Travels",
-        "source": "Pune",
-        "destination": "Nagpur",
-        "time": "07:00 PM",
-        "type": "Night",
-        "price": 1500,
-        "no_of_seats_available": 18
-      },
-      {
-        "id": 10,
-        "name": "Paulo Travels",
-        "source": "Goa",
-        "destination": "Mumbai",
-        "time": "08:00 AM",
-        "type": "Day",
-        "price": 1000,
-        "no_of_seats_available": 28
-      },
-      {
-        "id": 11,
-        "name": "Vivegam Travels",
-        "source": "Coimbatore",
-        "destination": "Chennai",
-        "time": "09:00 AM",
-        "type": "Day",
-        "price": 700,
-        "no_of_seats_available": 32
-      },
-      {
-        "id": 12,
-        "name": "KPN Travels",
-        "source": "Madurai",
-        "destination": "Chennai",
-        "time": "10:00 PM",
-        "type": "Night",
-        "price": 600,
-        "no_of_seats_available": 40
-      },
-      {
-        "id": 13,
-        "name": "Jabbar Travels",
-        "source": "Bangalore",
-        "destination": "Mumbai",
-        "time": "08:30 PM",
-        "type": "Night",
-        "price": 1300,
-        "no_of_seats_available": 15
-      },
-      {
-        "id": 14,
-        "name": "Seabird Tourist",
-        "source": "Mysore",
-        "destination": "Bangalore",
-        "time": "05:30 AM",
-        "type": "Day",
-        "price": 350,
-        "no_of_seats_available": 42
-      },
-      {
-        "id": 15,
-        "name": "VRL Travels",
-        "source": "Hubli",
-        "destination": "Belgaum",
-        "time": "07:00 AM",
-        "type": "Day",
-        "price": 400,
-        "no_of_seats_available": 50
-      }
-    ],
-    "passengers":[
-        {
-            "name": "John Doe",
-            "email": "johndoe@example.com",
-            "phone": "1234567890",
-            "seats": 2,
-            "bus": {
-              "id": 1,
-              "name": "Express Bus",
-              "source": "City A",
-              "destination": "City B",
-              "price": 500
-            }
-        }
-    ]
-  }
-  
+  "users": [
+    {
+      "id": "1",
+      "username": "john_doe",
+      "password": "password123"
+    },
+    {
+      "id": "2",
+      "username": "jane_doe",
+      "password": "mypassword"
+    }
+  ],
+  "buses": [
+    {
+      "id": "1",
+      "name": "Morning Star Travels",
+      "source": "Delhi",
+      "destination": "Jaipur",
+      "time": "06:00 AM",
+      "type": "Day",
+      "price": 500,
+      "no_of_seats_available": 30
+    },
+    {
+      "id": "2",
+      "name": "Raj National Express",
+      "source": "Delhi",
+      "destination": "Jaipur",
+      "time": "10:00 PM",
+      "type": "Night",
+      "price": 700,
+      "no_of_seats_available": 25
+    },
+    {
+      "id": "3",
+      "name": "Sharma Travels",
+      "source": "Mumbai",
+      "destination": "Pune",
+      "time": "07:00 AM",
+      "type": "Day",
+      "price": 300,
+      "no_of_seats_available": 40
+    },
+    {
+      "id": "4",
+      "name": "Neeta Tours",
+      "source": "Mumbai",
+      "destination": "Ahmedabad",
+      "time": "09:00 PM",
+      "type": "Night",
+      "price": 1200,
+      "no_of_seats_available": 35
+    },
+    {
+      "id": "5",
+      "name": "VRL Travels",
+      "source": "Bangalore",
+      "destination": "Hyderabad",
+      "time": "08:00 PM",
+      "type": "Night",
+      "price": 800,
+      "no_of_seats_available": 20
+    },
+    {
+      "id": "6",
+      "name": "KSRTC Airavata",
+      "source": "Bangalore",
+      "destination": "Chennai",
+      "time": "05:00 AM",
+      "type": "Day",
+      "price": 600,
+      "no_of_seats_available": 45
+    },
+    {
+      "id": "7",
+      "name": "SRS Travels",
+      "source": "Hyderabad",
+      "destination": "Visakhapatnam",
+      "time": "10:30 PM",
+      "type": "Night",
+      "price": 900,
+      "no_of_seats_available": 30
+    },
+    {
+      "id": "8",
+      "name": "Green Line Travels",
+      "source": "Chennai",
+      "destination": "Coimbatore",
+      "time": "06:00 AM",
+      "type": "Day",
+      "price": 500,
+      "no_of_seats_available": 50
+    },
+    {
+      "id": "9",
+      "name": "Orange Tours & Travels",
+      "source": "Pune",
+      "destination": "Nagpur",
+      "time": "07:00 PM",
+      "type": "Night",
+      "price": 1500,
+      "no_of_seats_available": 18
+    },
+    {
+      "id": "10",
+      "name": "Paulo Travels",
+      "source": "Goa",
+      "destination": "Mumbai",
+      "time": "08:00 AM",
+      "type": "Day",
+      "price": 1000,
+      "no_of_seats_available": 28
+    },
+    {
+      "id": "11",
+      "name": "Vivegam Travels",
+      "source": "Coimbatore",
+      "destination": "Chennai",
+      "time": "09:00 AM",
+      "type": "Day",
+      "price": 700,
+      "no_of_seats_available": 32
+    },
+    {
+      "id": "12",
+      "name": "KPN Travels",
+      "source": "Madurai",
+      "destination": "Chennai",
+      "time": "10:00 PM",
+      "type": "Night",
+      "price": 600,
+      "no_of_seats_available": 40
+    },
+    {
+      "id": "13",
+      "name": "Jabbar Travels",
+      "source": "Bangalore",
+      "destination": "Mumbai",
+      "time": "08:30 PM",
+      "type": "Night",
+      "price": 1300,
+      "no_of_seats_available": 15
+    },
+    {
+      "id": "14",
+      "name": "Seabird Tourist",
+      "source": "Mysore",
+      "destination": "Bangalore",
+      "time": "05:30 AM",
+      "type": "Day",
+      "price": 350,
+      "no_of_seats_available": 42
+    },
+    {
+      "id": "15",
+      "name": "VRL Travels",
+      "source": "Hubli",
+      "destination": "Belgaum",
+      "time": "07:00 AM",
+      "type": "Day",
+      "price": 400,
+      "no_of_seats_available": 50
+    }
+  ],
+  "passengers": [
+    {
+      "id": "d508",
+      "name": "Inzamamul Haque 27 12",
+      "email": "ayy@gmail.com",
+      "phone": "dsfdf",
+      "bus": {}
+    }
+  ]
+}

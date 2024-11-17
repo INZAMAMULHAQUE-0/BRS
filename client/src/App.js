@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import BusList from "./components/BusList";
-import PassengerDetails from "./components/PassengerDetails"
+import PassengerDetails from "./components/PassengerDetails";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
