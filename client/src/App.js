@@ -6,6 +6,7 @@ import BusList from "./components/BusList";
 import Home from "./components/Home";
 import PassengerDetails from "./components/PassengerDetails";
 import Contact from "./components/Contact";
+
 import About from "./components/About";
 import PaymentGateway from "./components/PaymentGateway";
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/passenger-details" element={<PassengerDetails />} />
           <Route path="/Contact" element={<Contact />} />
+          <Route path="/About" element={<About />} />
           <Route path="/About" element={<About />} />
           <Route path="/paymentgateway" element={<PaymentGateway/>} />
         </Routes>
