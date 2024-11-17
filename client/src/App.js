@@ -3,8 +3,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import BusList from "./components/BusList";
+import Home from "./components/Home";
 import PassengerDetails from "./components/PassengerDetails";
 import Contact from "./components/Contact";
+import PaymentGateway from "./components/PaymentGateway";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -16,11 +18,13 @@ function App() {
       <Router>
         
         <Routes>
-          <Route path="/" element={<BusList />} />
+        <Route path="/" element={<Home/>} />
+          <Route path="/buses" element={<BusList />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/passenger-details" element={<PassengerDetails />} />
           <Route path="/Contact" element={<Contact />} />
+          <Route path="/paymentgateway" element={<PaymentGateway/>} />
         </Routes>
       </Router>
     </div>

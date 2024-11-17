@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import "./BusList.css";
 import Navbar from "./Navbar";
 import "font-awesome/css/font-awesome.min.css";
-import PassengerDetails from "./PassengerDetails";
 
 const BusList = () => {
   const [buses, setBuses] = useState([]);
