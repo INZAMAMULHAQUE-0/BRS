@@ -5,6 +5,7 @@ import Signup from "./components/Signup";
 import BusList from "./components/BusList";
 import PassengerDetails from "./components/PassengerDetails";
 import Contact from "./components/Contact";
+import About from "./components/About";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -21,6 +22,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/passenger-details" element={<PassengerDetails />} />
           <Route path="/Contact" element={<Contact />} />
+          <Route path="/About" element={<About />} />
         </Routes>
       </Router>
     </div>

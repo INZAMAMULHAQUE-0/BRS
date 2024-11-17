@@ -1,0 +1,110 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark background */
+    color: white;
+  }
+  
+  .contact-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #1a1a1a, #6f6f6f);
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: white;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #333;
+    color: white;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, border 0.3s ease;
+  }
+  
+  /* Focus and Hover Styles */
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    background-color: #444;
+    border: 2px solid #ff6f00; /* Highlight input with orange on focus */
+    outline: none;
+  }
+  
+  .contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+  
+  .contact-form button {
+    padding: 15px;
+    background-color: #373736;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contact-form button:hover {
+    background-color: #e65a00;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .error-message,
+  .success-message {
+    font-size: 16px;
+    margin-top: -15px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  /* Error Message Styling */
+  .error-message {
+    color: #ff0000;
+  }
+  
+  /* Success Message Styling */
+  .success-message {
+    color: #28a745;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .contact-container {
+      padding: 20px;
+      width: 90%;
+    }
+  
+    h1 {
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+  }
+  
+  
