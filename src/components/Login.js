@@ -36,7 +36,7 @@ const Login = () => {
     }
 
     try {
-      const res = await axios.get("http://localhost:3000/users", {
+      const res = await axios.get("https://brs-2-1lt4.onrender.com/users", {
         params: { username, password },
       });
 

@@ -18,7 +18,7 @@ const Signup = () => {
     }
 
     try {
-      await axios.post("http://localhost:3000/users", { username, email, password });
+      await axios.post("https://brs-2-1lt4.onrender.com/users", { username, email, password });
       alert("Signup successful!");
       setError(""); // Clear the error message
     } catch (err) {

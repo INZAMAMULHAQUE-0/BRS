@@ -16,7 +16,7 @@ const BusList = () => {
 
   const fetchBuses = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/buses");
+      const res = await axios.get("https://brs-2-1lt4.onrender.com/buses");
       let filteredBuses = res.data;
 
       if (source) {

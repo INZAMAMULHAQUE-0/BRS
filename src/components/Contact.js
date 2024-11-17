@@ -31,7 +31,7 @@ const ContactPage = () => {
 
     try {
       // Replace with the API endpoint for handling the contact form submission
-      await axios.post("http://localhost:3000/contact", {
+      await axios.post("https://brs-2-1lt4.onrender.com/users", {
         name,
         email,
         message,
