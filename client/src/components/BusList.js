@@ -69,7 +69,7 @@ const BusList = () => {
           ></i>
         </div>
 
-        <h1>Bus Reservation</h1>
+        <h1>QuickRoute</h1>
 
         <div className="filters">
           <input

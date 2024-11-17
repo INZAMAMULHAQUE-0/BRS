@@ -7,14 +7,14 @@ const PassengerDetails = () => {
   const location = useLocation();
   const selectedBus = location.state?.selectedBus;
 
-  const [passengers, setPassengers] = useState([{ name: "", email: "", phone: "" }]);
+  const [passengers, setPassengers] = useState([{ name: "", email: "", phone: "", age: "", gender: "", address: "" }]);
 
   if (!selectedBus) {
     return <p>No bus selected. Please go back and select a bus.</p>;
   }
 
   const handleAddPassenger = () => {
-    setPassengers([...passengers, { name: "", email: "", phone: "" }]);
+    setPassengers([...passengers, { name: "", email: "", phone: "", age: "", gender: "", address: "" }]);
   };
 
   const handlePassengerChange = (index, e) => {
@@ -26,7 +26,7 @@ const PassengerDetails = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (passengers.some((p) => !p.name || !p.email || !p.phone)) {
+    if (passengers.some((p) => !p.name || !p.email || !p.phone || !p.age || !p.gender || !p.address)) {
       alert("Please fill in all passenger details.");
       return;
     }
@@ -51,7 +51,10 @@ const PassengerDetails = () => {
       doc.text(`Name: ${passenger.name}`, 10, yOffset + 10);
       doc.text(`Email: ${passenger.email}`, 10, yOffset + 20);
       doc.text(`Phone: ${passenger.phone}`, 10, yOffset + 30);
-      yOffset += 40;
+      doc.text(`Age: ${passenger.age}`, 10, yOffset + 40);
+      doc.text(`Gender: ${passenger.gender}`, 10, yOffset + 50);
+      doc.text(`Address: ${passenger.address}`, 10, yOffset + 60);
+      yOffset += 70;
     });
 
     // Save the PDF
@@ -93,13 +96,40 @@ const PassengerDetails = () => {
               value={passenger.phone}
               onChange={(e) => handlePassengerChange(index, e)}
             />
+            <input
+              type="number"
+              name="age"
+              placeholder="Age"
+              value={passenger.age}
+              onChange={(e) => handlePassengerChange(index, e)}
+            />
+            <select
+              name="gender"
+              value={passenger.gender}
+              onChange={(e) => handlePassengerChange(index, e)}
+            >
+              <option value="">Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+            <label htmlFor="address">Address</label>
+            <textarea
+              name="address"
+              id="address"
+              placeholder="Address"
+              value={passenger.address}
+              onChange={(e) => handlePassengerChange(index, e)}
+            />
           </div>
         ))}
 
-        <button type="button" onClick={handleAddPassenger}>
-          Add Passenger
-        </button>
-        <button type="submit">Book</button>
+        <div className="buttons-container">
+          <button type="button" onClick={handleAddPassenger} className="add-passenger-button">
+            Add Passenger
+          </button>
+          <button type="submit" className="submit-button">Book</button>
+        </div>
       </form>
     </div>
   );

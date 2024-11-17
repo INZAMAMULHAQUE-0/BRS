@@ -1,19 +1,37 @@
 /* General Styles */
+/* General Styles */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f9f9f9;
   margin: 0;
   padding: 0;
+
+  /* Background Image Styling */
+  background-image: url("https://imagedelivery.net/dmcxpiIQ1lAgOmi_eg0IzQ/24c787fa-301c-494c-a94e-1f6d6b998e00/public");
+  background-size: cover; /* Ensures the image fills the screen */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling */
+  background-attachment: fixed; /* Keeps the image fixed during scrolling */
+  
 }
 
+/* To ensure content is readable over the blurred background */
 .container {
+  position: relative; /* Ensures layering above the blurred background */
   max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  /* Semi-transparent background with better contrast */
+  background-color: rgba(18, 17, 17, 0.95); /* Slightly opaque white */
+  /* backdrop-filter: blur(1px); Adds a subtle blur for a frosted glass effect */
+  /* -webkit-backdrop-filter: blur(10px); Ensures compatibility with WebKit browsers */
+
+  border-radius: 8px; /* Smooth corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow for better separation */
+  color: #333333; /* Dark text color for readability */
 }
+
+
 
 /* Header */
 h1 {

@@ -7,17 +7,12 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          BusReservation
+        
         </Link>
         <ul className="navbar-menu">
           <li>
             <Link to="/" className="navbar-link">
               Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/buses" className="navbar-link">
-              Buses
             </Link>
           </li>
           <li>

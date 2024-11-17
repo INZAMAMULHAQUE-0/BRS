@@ -4,6 +4,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import BusList from "./components/BusList";
 import PassengerDetails from "./components/PassengerDetails";
+import Contact from "./components/Contact";
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -13,14 +14,13 @@ function App() {
   return (
     <div className={isDarkMode ? "dark-mode" : "light-mode"}>
       <Router>
-        <button onClick={toggleMode}>
-          {isDarkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
-        </button>
+        
         <Routes>
           <Route path="/" element={<BusList />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/passenger-details" element={<PassengerDetails />} />
+          <Route path="/Contact" element={<Contact />} />
         </Routes>
       </Router>
     </div>

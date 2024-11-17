@@ -1,47 +1,121 @@
+/* Passenger Details Container */
 .passenger-details-container {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-  }
-  
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #333; /* Slightly lighter border */
+  border-radius: 10px;
+  background-color: #121212; /* Black background */
+  color: #ffffff; /* White text color */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Darker shadow */
+  opacity: 0.95;
+}
+
+/* Passenger Form Layout */
+.passenger-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between; /* Align items with space between */
+  margin-bottom: 30px; /* Add space between each passenger's form */
+}
+
+/* Passenger Form Section */
+.passenger-form > div {
+  width: 100%; /* Full width to stack vertically */
+  margin-bottom: 20px; /* Space between the individual passenger forms */
+}
+
+/* Form Fields (Input, Select) */
+.passenger-form input,
+.passenger-form select {
+  flex: 1 1 calc(33% - 20px); /* 3 equal columns */
+  min-width: 150px; /* Reduce the minimum width */
+  padding: 10px; /* Smaller padding */
+  font-size: 14px; /* Smaller font size */
+  border: 1px solid #444; /* Darker border */
+  border-radius: 8px;
+  background-color: #333; /* Dark background for inputs */
+  color: #ffffff; /* White text for inputs */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+.passenger-form input:focus,
+.passenger-form select:focus {
+  border-color: #007bff; /* Blue border on focus */
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Blue glow on focus */
+}
+
+/* Button Styles */
+.add-passenger-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  font-size: 16px;
+}
+
+.add-passenger-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* Slightly enlarges on hover */
+}
+
+/* Submit Button */
+.submit-button {
+  padding: 14px 28px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 250px; /* Limiting width */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 8px rgba(0, 128, 0, 0.3); /* Green glow shadow */
+}
+
+.submit-button:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  box-shadow: 0 8px 16px rgba(0, 128, 0, 0.5); /* Stronger glow effect */
+}
+
+/* Bus Summary Section */
+.bus-summary {
+  margin-top: 20px;
+  padding: 10px;
+  border-top: 1px solid #444;
+  font-size: 16px;
+  color: #ffffff; /* White text color */
+  background-color: #333; /* Dark background */
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.bus-summary:hover {
+  background-color: #444; /* Darker background on hover */
+}
+
+/* Responsive Design: Ensure Form is Usable on Small Screens */
+@media (max-width: 768px) {
   .passenger-form {
-    margin-bottom: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    flex-direction: column; /* Stack the form elements vertically */
+    align-items: flex-start;
   }
-  
-  .add-passenger-button {
-    margin: 10px 0;
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+
+  .passenger-form input,
+  .passenger-form select {
+    flex: 1 1 100%; /* Make form fields take full width */
+    margin-bottom: 10px;
   }
-  
-  .add-passenger-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .submit-button {
-    padding: 10px 20px;
-    background-color: green;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .submit-button:hover {
-    background-color: darkgreen;
-  }
-  
-  .bus-summary {
-    margin-top: 20px;
-    padding: 10px;
-    border-top: 1px solid #ddd;
-  }
-  
+}

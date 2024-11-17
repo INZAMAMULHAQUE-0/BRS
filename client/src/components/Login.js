@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./Login.css"; // Importing the CSS file
+import "./Login.css";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
 
   const validateInputs = () => {
     if (!username || !password) {
@@ -54,24 +55,57 @@ const Login = () => {
     }
   };
 
+  const handleForgotPassword = () => {
+    alert("Password reset instructions have been sent to your email.");
+    setShowForgotPassword(false);
+  };
+
   return (
     <div className="login-container">
-      <form onSubmit={handleLogin}>
+      <h2 className="login-header">Login</h2> {/* Added Login heading */}
+      <form onSubmit={handleLogin} className="login-form">
         <input
           type="text"
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          className="login-input"
         />
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          className="login-input"
         />
-        {error && <p>{error}</p>} {/* Display error */}
-        <button type="submit">Login</button>
+        {error && <p className="error-message">{error}</p>}
+        <button type="submit" className="login-button">Login</button>
       </form>
+      
+      <div className="forgot-password-container">
+        <button
+          className="forgot-password-button"
+          onClick={() => setShowForgotPassword(!showForgotPassword)}
+        >
+          Forgot Password?
+        </button>
+
+        {showForgotPassword && (
+          <div className="forgot-password-form">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="forgot-password-input"
+            />
+            <button
+              className="reset-password-button"
+              onClick={handleForgotPassword}
+            >
+              Reset Password
+            </button>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
