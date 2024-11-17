@@ -9,7 +9,7 @@ const Signup = () => {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/users", { username, password });
+      await axios.post("http://localhost:3000/users", { username, password });
       alert("Signup successful!");
     } catch (err) {
       alert("An error occurred during signup.");

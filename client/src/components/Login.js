@@ -1,12 +1,38 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./Login.css"; // Importing the CSS file
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const validateInputs = () => {
+    if (!username || !password) {
+      setError("Both fields are required.");
+      return false;
+    }
+
+    if (username.length < 4) {
+      setError("Username must be at least 4 characters.");
+      return false;
+    }
+
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters.");
+      return false;
+    }
+
+    setError(""); // Clear any previous errors
+    return true;
+  };
 
   const handleLogin = async (e) => {
     e.preventDefault();
+
+    if (!validateInputs()) {
+      return;
+    }
 
     try {
       const res = await axios.get("http://localhost:3000/users", {
@@ -21,29 +47,32 @@ const Login = () => {
         alert("Login successful!");
         localStorage.setItem("user", JSON.stringify(user));
       } else {
-        alert("Invalid credentials!");
+        setError("Invalid credentials!");
       }
     } catch (err) {
-      alert("An error occurred during login.");
+      setError("An error occurred during login.");
     }
   };
 
   return (
-    <form onSubmit={handleLogin}>
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="submit">Login</button>
-    </form>
+    <div className="login-container">
+      <form onSubmit={handleLogin}>
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        {error && <p>{error}</p>} {/* Display error */}
+        <button type="submit">Login</button>
+      </form>
+    </div>
   );
 };
 
