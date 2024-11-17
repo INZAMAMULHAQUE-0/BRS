@@ -1,4 +1,7 @@
 {
+    "scripts": {
+    "start": "json-server --watch db.json --port 8080"
+  },
   "users": [
     {
       "id": "1",
