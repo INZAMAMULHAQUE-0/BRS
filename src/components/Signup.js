@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Signup.css"; // Add the CSS file for styling
 
@@ -9,6 +10,8 @@ const Signup = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
 
+  const navigate = useNavigate(); // Use the useNavigate hook for navigation
+
   const handleSignup = async (e) => {
     e.preventDefault();
 
@@ -18,11 +21,17 @@ const Signup = () => {
     }
 
     try {
-      await axios.post("https://brs-2-1lt4.onrender.com/users", { username, email, password });
-      alert("Signup successful!");
-      setError(""); // Clear the error message
+      const response = await axios.post("https://brs-2-1lt4.onrender.com/users", { username, email, password });
+
+      if (response.status === 201) {
+        alert("Signup successful!");
+        setError(""); // Clear the error message
+        navigate("/buses"); // Navigate to the /buses page
+      } else {
+        setError("Signup failed. Please try again.");
+      }
     } catch (err) {
-      setError("An error occurred during signup.");
+      setError(err.response?.data?.message || "An error occurred during signup.");
     }
   };
 
@@ -35,6 +44,7 @@ const Signup = () => {
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          className="signup-input"
           required
         />
         <input
@@ -42,6 +52,7 @@ const Signup = () => {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          className="signup-input"
           required
         />
         <input
@@ -49,6 +60,7 @@ const Signup = () => {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          className="signup-input"
           required
         />
         <input
@@ -56,11 +68,18 @@ const Signup = () => {
           placeholder="Confirm Password"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
+          className="signup-input"
           required
         />
         {error && <p className="error-message">{error}</p>} {/* Display error */}
         <button type="submit" className="signup-button">Signup</button>
       </form>
+      <button 
+        className="back-button" 
+        onClick={() => navigate("/")} // Navigate to home page
+      >
+        Back to Home
+      </button>
     </div>
   );
 };

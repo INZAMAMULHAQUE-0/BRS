@@ -9,7 +9,80 @@ body {
   
   /* Signup Container */
   .signup-container {
-    max-width: 450px;
+    max-width: 450px;/* Container styling */
+    .signup-container {
+      max-width: 400px;
+      margin: 50px auto;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #f9f9f9;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    
+    /* Header styling */
+    .signup-header {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    
+    /* Input field styling */
+    .signup-input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+      background-color: #fff;
+      transition: border-color 0.3s;
+    }
+    
+    .signup-input:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+    
+    /* Error message styling */
+    .error-message {
+      color: #ff4d4f;
+      font-size: 14px;
+      margin: 10px 0;
+      background-color: #ffe0e0;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    
+    /* Button styling */
+    .signup-button, .back-button {
+      width: 100%;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      background-color: #007bff;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+    }
+    
+    .signup-button:hover, .back-button:hover {
+      background-color: #0056b3;
+    }
+    
+    /* Back button specific */
+    .back-button {
+      background-color: #6c757d;
+    }
+    
+    .back-button:hover {
+      background-color: #5a6268;
+    }
+    
     margin: 100px auto;
     padding: 30px;
     background-color: #1c1c1c;

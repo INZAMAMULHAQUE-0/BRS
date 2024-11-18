@@ -8,17 +8,14 @@ const PassengerDetails = () => {
   const selectedBus = location.state?.selectedBus;
   const navigate = useNavigate(); // Hook to navigate to the payment page
 
-  const [passengers, setPassengers] = useState([]);
   const [selectedSeats, setSelectedSeats] = useState([]);
-  const [totalFare, setTotalFare] = useState(0);
+  const [passengers, setPassengers] = useState([]);
 
   if (!selectedBus) {
     return <p>No bus selected. Please go back and select a bus.</p>;
   }
 
-  const calculateTotalFare = () => {
-    setTotalFare(selectedSeats.length * selectedBus.price);
-  };
+  const calculateTotalFare = () => selectedSeats.length * selectedBus.price;
 
   const toggleSeatSelection = (seatNo) => {
     let updatedSeats;
@@ -33,19 +30,20 @@ const PassengerDetails = () => {
     setSelectedSeats(updatedSeats);
 
     // Update passengers to match seat selection
-    const updatedPassengers = updatedSeats.map((seat, index) => ({
-      ...passengers[index],
-      seat,
-      name: passengers[index]?.name || "",
-      email: passengers[index]?.email || "",
-      phone: passengers[index]?.phone || "",
-      age: passengers[index]?.age || "",
-      gender: passengers[index]?.gender || "",
-      address: passengers[index]?.address || "",
-    }));
+    const updatedPassengers = updatedSeats.map((seat) => {
+      const existingPassenger = passengers.find((p) => p.seat === seat) || {};
+      return {
+        seat,
+        name: existingPassenger.name || "",
+        email: existingPassenger.email || "",
+        phone: existingPassenger.phone || "",
+        age: existingPassenger.age || "",
+        gender: existingPassenger.gender || "",
+        address: existingPassenger.address || "",
+      };
+    });
 
     setPassengers(updatedPassengers);
-    calculateTotalFare();
   };
 
   const handlePassengerChange = (index, e) => {
@@ -85,7 +83,7 @@ const PassengerDetails = () => {
     doc.text(`Bus Name: ${selectedBus.name}`, 10, 20);
     doc.text(`Route: ${selectedBus.source} to ${selectedBus.destination}`, 10, 30);
     doc.text(`Price (per passenger): ₹${selectedBus.price}`, 10, 40);
-    doc.text(`Total Fare: ₹${totalFare}`, 10, 50);
+    doc.text(`Total Fare: ₹${calculateTotalFare()}`, 10, 50);
     doc.text(`Selected Seats: ${selectedSeats.join(", ")}`, 10, 60);
 
     // Add Passenger Details
@@ -148,7 +146,7 @@ const PassengerDetails = () => {
           <p><strong>Bus Name:</strong> {selectedBus.name}</p>
           <p><strong>Route:</strong> {selectedBus.source} to {selectedBus.destination}</p>
           <p><strong>Price (per passenger):</strong> ₹{selectedBus.price}</p>
-          <p><strong>Total Fare:</strong> ₹{totalFare}</p>
+          <p><strong>Total Fare:</strong> ₹{calculateTotalFare()}</p>
         </div>
 
         <form onSubmit={handleSubmit}>
@@ -206,11 +204,10 @@ const PassengerDetails = () => {
           </button>
         </form>
 
-        {/* Add button to download the PDF */}
         <button
           onClick={generatePDF}
           className="mt-6 bg-green-600 text-white px-4 py-2 rounded-lg"
-          style={{ backgroundColor: 'blue' }}>
+        >
           Download Ticket (PDF)
         </button>
       </div>

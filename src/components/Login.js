@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
 
@@ -7,6 +8,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [showForgotPassword, setShowForgotPassword] = useState(false);
+
+  const navigate = useNavigate(); // Hook for navigation
 
   const validateInputs = () => {
     if (!username || !password) {
@@ -47,6 +50,7 @@ const Login = () => {
       if (user) {
         alert("Login successful!");
         localStorage.setItem("user", JSON.stringify(user));
+        navigate("/dashboard"); // Navigate to dashboard on successful login
       } else {
         setError("Invalid credentials!");
       }
@@ -62,7 +66,16 @@ const Login = () => {
 
   return (
     <div className="login-container">
-      <h2 className="login-header">Login</h2> {/* Added Login heading */}
+      {/* Help Button */}
+      <button 
+        className="help-button" 
+        onClick={() => navigate("/contact")}
+      >
+        Help
+      </button>
+
+      <h2 className="login-header">Login</h2>
+      
       <form onSubmit={handleLogin} className="login-form">
         <input
           type="text"
@@ -82,6 +95,7 @@ const Login = () => {
         <button type="submit" className="login-button">Login</button>
       </form>
       
+      {/* Forgot Password Section */}
       <div className="forgot-password-container">
         <button
           className="forgot-password-button"
@@ -106,6 +120,14 @@ const Login = () => {
           </div>
         )}
       </div>
+
+      {/* Back Button */}
+      <button 
+        className="back-button" 
+        onClick={() => navigate("/")}
+      >
+        Back to Home
+      </button>
     </div>
   );
 };
