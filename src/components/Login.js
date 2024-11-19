@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { UserContext } from "./Usercontext.js";
 import "./Login.css";
 
 const Login = () => {
@@ -9,7 +10,8 @@ const Login = () => {
   const [error, setError] = useState("");
   const [showForgotPassword, setShowForgotPassword] = useState(false);
 
-  const navigate = useNavigate(); // Hook for navigation
+  const { setUser } = useContext(UserContext); // Access setUser from context
+  const navigate = useNavigate();
 
   const validateInputs = () => {
     if (!username || !password) {
@@ -27,7 +29,7 @@ const Login = () => {
       return false;
     }
 
-    setError(""); // Clear any previous errors
+    setError("");
     return true;
   };
 
@@ -49,8 +51,9 @@ const Login = () => {
 
       if (user) {
         alert("Login successful!");
+        setUser(user); // Set the user in context
         localStorage.setItem("user", JSON.stringify(user));
-        navigate("/dashboard"); // Navigate to dashboard on successful login
+        navigate("/buses");
       } else {
         setError("Invalid credentials!");
       }
@@ -58,12 +61,6 @@ const Login = () => {
       setError("An error occurred during login.");
     }
   };
-
-  const handleForgotPassword = () => {
-    alert("Password reset instructions have been sent to your email.");
-    setShowForgotPassword(false);
-  };
-
   return (
     <div className="login-container">
       {/* Help Button */}
@@ -113,7 +110,6 @@ const Login = () => {
             />
             <button
               className="reset-password-button"
-              onClick={handleForgotPassword}
             >
               Reset Password
             </button>
