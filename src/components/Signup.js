@@ -21,7 +21,11 @@ const Signup = () => {
     }
 
     try {
-      const response = await axios.post("https://brs-2-1lt4.onrender.com/users", { username, email, password });
+      const response = await axios.post("https://brs-2-1lt4.onrender.com/users", {
+        username,
+        email,
+        password,
+      });
 
       if (response.status === 201) {
         alert("Signup successful!");
@@ -45,6 +49,7 @@ const Signup = () => {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           className="signup-input"
+          style={{ color: "black" }} // Inline style for text color
           required
         />
         <input
@@ -53,6 +58,7 @@ const Signup = () => {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="signup-input"
+          style={{ color: "black" }} // Inline style for text color
           required
         />
         <input
@@ -61,6 +67,7 @@ const Signup = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           className="signup-input"
+          style={{ color: "black" }} // Inline style for text color
           required
         />
         <input
@@ -69,13 +76,16 @@ const Signup = () => {
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
           className="signup-input"
+          style={{ color: "black" }} // Inline style for text color
           required
         />
         {error && <p className="error-message">{error}</p>} {/* Display error */}
-        <button type="submit" className="signup-button">Signup</button>
+        <button type="submit" className="signup-button">
+          Signup
+        </button>
       </form>
-      <button 
-        className="back-button" 
+      <button
+        className="back-button"
         onClick={() => navigate("/")} // Navigate to home page
       >
         Back to Home

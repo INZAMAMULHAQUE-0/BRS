@@ -61,6 +61,7 @@ const Login = () => {
       setError("An error occurred during login.");
     }
   };
+
   return (
     <div className="login-container">
       {/* Help Button */}
@@ -79,6 +80,7 @@ const Login = () => {
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
+          style={{ color: "black" }} // Inline style for text color
           className="login-input"
         />
         <input
@@ -86,6 +88,7 @@ const Login = () => {
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          style={{ color: "black" }} // Inline style for text color
           className="login-input"
         />
         {error && <p className="error-message">{error}</p>}
@@ -106,6 +109,7 @@ const Login = () => {
             <input
               type="email"
               placeholder="Enter your email"
+              style={{ color: "black" }} // Inline style for text color
               className="forgot-password-input"
             />
             <button
